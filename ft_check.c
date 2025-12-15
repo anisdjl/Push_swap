@@ -1,43 +1,55 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_uint.c                                    :+:      :+:    :+:   */
+/*   ft_check.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adjelili <adjelili@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/21 14:09:58 by adjelili          #+#    #+#             */
-/*   Updated: 2025/12/15 12:09:48 by adjelili         ###   ########.fr       */
+/*   Created: 2025/12/15 15:57:05 by adjelili          #+#    #+#             */
+/*   Updated: 2025/12/15 17:47:36 by adjelili         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-static int	ft_count(unsigned int n)
+\
+int	ft_check(char *string)
 {
-	int	count;
-
-	count = 0;
-	if (n == 0)
+	int y;
+	
+	y = 0;
+	while (string[y])
 	{
-		count = 1;
-		return (count);
+		if (!ft_isdigit(string[y]))
+			return (0);
+		y++;
 	}
-	while (n != 0)
-	{
-		n = n / 10;
-		count++;
-	}
-	return (count);
+	return (1);
 }
 
-int	ft_print_uint(unsigned int n)
+int	ft_check_dup(int argc, char **argv)
 {
-	if (n >= 10)
+	int	y;
+	int	a;
+
+	y = 0;
+	while (y < argc)
 	{
-		ft_print_uint(n / 10);
-		ft_print_uint(n % 10);
+		a = y + 1;
+		while (a < argc)
+		{
+			if (atoi(argv[y]) == atoi(argv[a]))
+				return (0);
+			a++;
+		}
+		y++;
 	}
+	return (1);
+}
+
+int	ft_isdigit(int c)
+{
+	if (c >= '0' && c <= '9')
+		return (1);
 	else
-		ft_print_char(n + '0');
-	return (ft_count(n));
+		return (0);
 }

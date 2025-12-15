@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_print_int.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anis <anis@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: adjelili <adjelili@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/20 09:24:38 by adjelili          #+#    #+#             */
-/*   Updated: 2025/11/22 21:24:04 by anis             ###   ########.fr       */
+/*   Updated: 2025/12/15 12:10:13 by adjelili         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "push_swap.h"
 
 static int	ft_count(int n)
 {
