@@ -6,7 +6,7 @@
 /*   By: adjelili <adjelili@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/15 16:00:17 by adjelili          #+#    #+#             */
-/*   Updated: 2025/12/15 17:57:06 by adjelili         ###   ########.fr       */
+/*   Updated: 2025/12/16 14:38:33 by adjelili         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,7 @@ typedef struct	dnode
 
 void	display(dnode *stack)
 {
-	dnode	*temp = malloc(sizeof(dnode));
-	temp = stack;
+	dnode	*temp = stack;
 
 	if (!stack)
 		ft_printf("The stack is empty");
@@ -63,7 +62,7 @@ int	main(int argc, char **argv)
 	dnode *stack = NULL;
 
 	i = argc - 1;
-	if (ft_check(argv[i]) && ft_check_dup(argc, argv))
+	if (ft_check_digit(argc, argv) && ft_check_dup(argc, argv))
 	{
 		while (i > 0)
 		{

@@ -6,7 +6,7 @@
 /*   By: adjelili <adjelili@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/14 16:34:31 by adjelili          #+#    #+#             */
-/*   Updated: 2025/12/15 17:37:05 by adjelili         ###   ########.fr       */
+/*   Updated: 2025/12/16 11:19:34 by adjelili         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int	ft_print_str(char *str);
 int	ft_print_uint(unsigned int n);
 int	ft_print_hex(unsigned int n, char c);
 int	ft_print_ptr(void *p);
-int	ft_check(char *string);
+int	ft_check_digit(int argc, char **argv);
 int	main(int arg, char **argv);
 int	ft_atoi(char *nptr);
 int	ft_isdigit(int c);
