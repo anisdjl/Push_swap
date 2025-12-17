@@ -6,18 +6,11 @@
 /*   By: adjelili <adjelili@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/15 16:00:17 by adjelili          #+#    #+#             */
-/*   Updated: 2025/12/16 14:38:33 by adjelili         ###   ########.fr       */
+/*   Updated: 2025/12/17 10:57:40 by adjelili         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-typedef struct	dnode
-{
-	int	value;
-	struct dnode *next;
-	struct dnode *prev;
-} dnode;
 
 void	display(dnode *stack)
 {
@@ -58,20 +51,9 @@ dnode	*push_node(dnode *stack, int value)
 
 int	main(int argc, char **argv)
 {
-	int	i;
 	dnode *stack = NULL;
-
-	i = argc - 1;
-	if (ft_check_digit(argc, argv) && ft_check_dup(argc, argv))
-	{
-		while (i > 0)
-		{
-			stack = push_node(stack, ft_atoi(argv[i]));
-			i--;
-		}
-	}
-	else
-		ft_printf("Error\n");
+	
+	stack = ft_parse(argc, argv, stack);
 	display(stack);
 
 	free(stack);

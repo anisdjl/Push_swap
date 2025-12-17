@@ -6,7 +6,7 @@
 /*   By: adjelili <adjelili@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/14 16:34:31 by adjelili          #+#    #+#             */
-/*   Updated: 2025/12/16 11:19:34 by adjelili         ###   ########.fr       */
+/*   Updated: 2025/12/17 11:13:08 by adjelili         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,24 +18,30 @@
 # include <stdarg.h>
 # include <stdint.h>
 
-// typedef struct s_list
-// {
-// 	int				content;
-// 	struct s_list	*next;
-// }	node;
+typedef struct	dnode
+{
+	int	value;
+	struct dnode *next;
+	struct dnode *prev;
+} dnode;
 
-int	ft_print_int(int n);
-int	ft_test_format(char c, va_list *args);
-int	ft_printf(const char *s, ...);
-int	ft_print_char(char c);
-int	ft_print_str(char *str);
-int	ft_print_uint(unsigned int n);
-int	ft_print_hex(unsigned int n, char c);
-int	ft_print_ptr(void *p);
-int	ft_check_digit(int argc, char **argv);
-int	main(int arg, char **argv);
-int	ft_atoi(char *nptr);
-int	ft_isdigit(int c);
-int	ft_check_dup(int argc, char **argv);
+int		ft_print_int(int n);
+int		ft_test_format(char c, va_list *args);
+int		ft_printf(const char *s, ...);
+int		ft_print_char(char c);
+int		ft_print_str(char *str);
+int		ft_print_uint(unsigned int n);
+int		ft_print_hex(unsigned int n, char c);
+int		ft_print_ptr(void *p);
+int		ft_check_digit(int argc, char **argv);
+int		main(int arg, char **argv);
+int		ft_atoi(char *nptr);
+int		ft_isdigit(int c);
+int		ft_check_dup(int argc, char **argv);
+dnode	*ft_parse(int argc, char **argv, dnode *stack);
+dnode	*push_node(dnode *stack, int value);
+char	**ft_split(char const *s, char c);
+dnode	*ft_parse2(char *argv2, dnode *stack);
+int		ft_count_words(char const *s, char c);
 
 #endif

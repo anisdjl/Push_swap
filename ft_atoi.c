@@ -6,7 +6,7 @@
 /*   By: adjelili <adjelili@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/06 13:09:28 by adjelili          #+#    #+#             */
-/*   Updated: 2025/12/15 12:22:05 by adjelili         ###   ########.fr       */
+/*   Updated: 2025/12/17 10:37:09 by adjelili         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,11 +38,3 @@ int	ft_atoi(char *nptr)
 	return (total * sign);
 }
 
-/*#include <stdio.h>
-
-int	main(void)
-{
-	const char s[] = "-12457abcdef";
-	printf("%d", ft_atoi(s));
-	return (0);
-}*/
