@@ -6,7 +6,7 @@
 /*   By: adjelili <adjelili@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/14 16:34:31 by adjelili          #+#    #+#             */
-/*   Updated: 2025/12/17 11:13:08 by adjelili         ###   ########.fr       */
+/*   Updated: 2025/12/19 11:10:10 by adjelili         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,5 +43,8 @@ dnode	*push_node(dnode *stack, int value);
 char	**ft_split(char const *s, char c);
 dnode	*ft_parse2(char *argv2, dnode *stack);
 int		ft_count_words(char const *s, char c);
+int		ft_check_digit2(int words, char **tab);
+int		ft_check_dup2(int words, char **argv);
+char	**ft_free(char ***tab, int x);
 
 #endif

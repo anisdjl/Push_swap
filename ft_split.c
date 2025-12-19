@@ -6,13 +6,13 @@
 /*   By: adjelili <adjelili@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/10 16:40:37 by adjelili          #+#    #+#             */
-/*   Updated: 2025/12/17 11:54:06 by adjelili         ###   ########.fr       */
+/*   Updated: 2025/12/19 11:09:58 by adjelili         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static char	**ft_free(char ***tab, int x)
+char	**ft_free(char ***tab, int x)
 {
 	while (x >= 0)
 	{
