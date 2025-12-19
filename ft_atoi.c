@@ -6,17 +6,17 @@
 /*   By: adjelili <adjelili@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/06 13:09:28 by adjelili          #+#    #+#             */
-/*   Updated: 2025/12/17 10:37:09 by adjelili         ###   ########.fr       */
+/*   Updated: 2025/12/19 15:48:25 by adjelili         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	ft_atoi(char *nptr)
+long	ft_atoi(char *nptr)
 {
 	int	y;
 	int	sign;
-	int	total;
+	long	total;
 
 	total = 0;
 	sign = 1;

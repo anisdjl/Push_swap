@@ -6,7 +6,7 @@
 /*   By: adjelili <adjelili@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/15 15:57:05 by adjelili          #+#    #+#             */
-/*   Updated: 2025/12/19 11:05:39 by adjelili         ###   ########.fr       */
+/*   Updated: 2025/12/19 15:36:27 by adjelili         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,9 +63,9 @@ int	ft_check_dup(int argc, char **argv)
 	return (1);
 }
 
-int	ft_check_digit2(int words, char **tab) /*il faut que je change la fonction pour checker le tableau splite directement et non pas l'argument*/
-{
-		int	a;
+int	ft_check_digit2(int words, char **tab)
+{	
+	int	a;
 	int	y;
 
 	y = 0;
