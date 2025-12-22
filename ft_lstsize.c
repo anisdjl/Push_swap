@@ -1,42 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adjelili <adjelili@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/20 09:39:01 by adjelili          #+#    #+#             */
-/*   Updated: 2025/12/22 09:56:03 by adjelili         ###   ########.fr       */
+/*   Created: 2025/11/12 17:53:14 by adjelili          #+#    #+#             */
+/*   Updated: 2025/12/22 09:55:28 by adjelili         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	ft_printf(const char *format, ...)
+int	ft_lstsize(dnode *lst)
 {
-	int		y;
-	int		count;
-	va_list	args;
+	int	y;
 
-	va_start(args, format);
-	if (!format)
-		return (-1);
 	y = 0;
-	count = 0;
-	while (format[y])
+	while (lst)
 	{
-		if (format[y] == '%')
-		{
-			y++;
-			count += ft_test_format(format[y], &args);
-		}
-		else
-		{
-			write(1, &format[y], 1);
-			count += 1;
-		}
+		lst = lst->next;
 		y++;
 	}
-	va_end(args);
-	return (count);
+	return (y);
 }

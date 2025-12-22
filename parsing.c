@@ -6,7 +6,7 @@
 /*   By: adjelili <adjelili@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 14:16:10 by adjelili          #+#    #+#             */
-/*   Updated: 2025/12/19 16:07:37 by adjelili         ###   ########.fr       */
+/*   Updated: 2025/12/22 09:56:36 by adjelili         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,7 @@ dnode	*ft_parse2(char *argv2, dnode *stack)
 			if (!ft_int(ft_atoi(tab[y])))
 			{
 				write(2, "Error\n", 6);
-				//ft_free_stack une fonction qui free toutes le tab
+				//ft_free_tab une fonction qui free toutes le tab
 				//ft free stack
 				exit(EXIT_FAILURE);
 			}

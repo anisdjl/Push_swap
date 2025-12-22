@@ -6,7 +6,7 @@
 /*   By: adjelili <adjelili@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/20 09:24:38 by adjelili          #+#    #+#             */
-/*   Updated: 2025/12/15 12:10:13 by adjelili         ###   ########.fr       */
+/*   Updated: 2025/12/22 09:55:46 by adjelili         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,13 +56,3 @@ int	ft_print_int(int n)
 		ft_print_char(nb + '0');
 	return (ft_count(n));
 }
-
-// #include <stdio.h>
-// int main(void)
-// {
-// 	int n = 4;
-// 	//printf("%d", ft_print_int(n));
-// 	//ft_print_int(n);
-// 	printf("      %d", ft_print_int(n));
-// 	return (0);
-// }

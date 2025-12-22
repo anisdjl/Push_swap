@@ -6,7 +6,7 @@
 /*   By: adjelili <adjelili@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/10 16:40:37 by adjelili          #+#    #+#             */
-/*   Updated: 2025/12/19 11:09:58 by adjelili         ###   ########.fr       */
+/*   Updated: 2025/12/22 09:56:12 by adjelili         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,21 +96,3 @@ char	**ft_split(char const *s, char c)
 	tab[m] = NULL;
 	return (tab);
 }
-
-// #include <stdio.h>
-
-// int	main(void)
-// {
-// 	char str[] = "78 45 21 02 57";
-// 	int l;
-// 	char **tab2 = ft_split(str, ' ');
-
-// 	l = 0;
-// 	while (l < 4)
-// 	{
-// 		printf("%s\n", tab2[l]);
-// 		l++;
-// 	}
-// 	free (tab2);
-// 	return (0);
-// }
