@@ -6,7 +6,7 @@
 /*   By: adjelili <adjelili@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/14 16:34:31 by adjelili          #+#    #+#             */
-/*   Updated: 2025/12/22 17:37:25 by adjelili         ###   ########.fr       */
+/*   Updated: 2025/12/23 10:03:26 by adjelili         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,8 @@ void		sb(dnode *stack_b);
 void		ss(dnode *stack_a, dnode *stack_b);
 void		pa(dnode **stack_a, dnode **stack_b);
 void		pb(dnode **stack_b, dnode **stack_a);
-void		ra(dnode *stack_a);
-void		rb(dnode *stack_b);
+void		ra(dnode **stack_a);
+void		rb(dnode **stack_b);
 void		rr(dnode **stack_a, dnode **stack_b);
+
 #endif
