@@ -6,7 +6,7 @@
 /*   By: adjelili <adjelili@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/14 16:34:31 by adjelili          #+#    #+#             */
-/*   Updated: 2025/12/23 10:03:26 by adjelili         ###   ########.fr       */
+/*   Updated: 2025/12/23 18:20:28 by adjelili         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,8 @@ int			ft_check_dup2(int words, char **argv);
 char		**ft_free(char ***tab, int x);
 int			ft_int(long value);
 int			ft_lstsize(dnode *lst);
+void		ft_lstadd_back(dnode **stack, dnode *new);
+void		ft_lstadd_front(dnode **stack, dnode *new);
 void		sa(dnode *stack_a);
 void		sb(dnode *stack_b);
 void		ss(dnode *stack_a, dnode *stack_b);
@@ -57,5 +59,9 @@ void		pb(dnode **stack_b, dnode **stack_a);
 void		ra(dnode **stack_a);
 void		rb(dnode **stack_b);
 void		rr(dnode **stack_a, dnode **stack_b);
+void		rra(dnode **stack_a);
+void		rrb(dnode **stack_b);
+void		rrr(dnode **stack_a, dnode **stack_b);
+void		ft_free_stack(dnode **stack);
 
 #endif

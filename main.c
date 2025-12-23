@@ -6,7 +6,7 @@
 /*   By: adjelili <adjelili@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/15 16:00:17 by adjelili          #+#    #+#             */
-/*   Updated: 2025/12/22 17:32:50 by adjelili         ###   ########.fr       */
+/*   Updated: 2025/12/23 18:21:15 by adjelili         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,30 +61,42 @@ int	main(int argc, char **argv)
 	stack_b = push_node(stack_b, 1);
 	stack_b = push_node(stack_b, 99999);
 	stack_a = ft_parse(argc, argv, stack_a);
-	display(stack_b);
-	printf("\n");
+	// display(stack_b);
+	// printf("\n");
 	display(stack_a);
-	pa(&stack_a, &stack_b);
 	printf("\n");
-	display(stack_b);
-	pa(&stack_a, &stack_b);
-	printf("\n");
-	display(stack_b);
-	printf("\n");
+	// pa(&stack_a, &stack_b);
+	// printf("\n");
+	// display(stack_b);
+	// pa(&stack_a, &stack_b);
+	// printf("\n");
+	// display(stack_b);
+	// printf("\n");
+	// display(stack_a);
+	// pb(&stack_b, &stack_a);
+	// printf("\n");
+	// display(stack_b);
+	// pb(&stack_b, &stack_a);
+	// printf("\n");
+	// display(stack_b);
+	// pb(&stack_b, &stack_a);
+	// printf("\n");
+	// display(stack_b);
+	// pb(&stack_b, &stack_a);
+	// printf("\n");
+	// display(stack_b);
+	
+	ra(&stack_a);
 	display(stack_a);
-	pb(&stack_b, &stack_a);
+//	printf("\n");
+	// rb(&stack_b);
+	// display(stack_b);
 	printf("\n");
-	display(stack_b);
-	pb(&stack_b, &stack_a);
-	printf("\n");
-	display(stack_b);
-	pb(&stack_b, &stack_a);
-	printf("\n");
-	display(stack_b);
-	pb(&stack_b, &stack_a);
-	printf("\n");
-	display(stack_b);
-	stack_a = NULL;
+	rra(&stack_a);
+	display(stack_a);
+
+	ft_free_stack(&stack_a);
+	ft_free_stack(&stack_b);
 
 	return (0);
 }

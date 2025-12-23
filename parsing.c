@@ -6,12 +6,11 @@
 /*   By: adjelili <adjelili@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 14:16:10 by adjelili          #+#    #+#             */
-/*   Updated: 2025/12/22 09:56:36 by adjelili         ###   ########.fr       */
+/*   Updated: 2025/12/23 18:33:14 by adjelili         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdio.h>
 
 int ft_int(long value)
 {
@@ -57,7 +56,7 @@ dnode	*ft_parse(int argc, char **argv, dnode *stack)
 				if (!ft_int(ft_atoi(argv[i])))
 				{
 					write(2, "Error\n", 6);
-					//ft_free_stack une fonction qui free toutes la stack
+					ft_free_stack(&stack);
 					exit(EXIT_FAILURE);
 				}
 				stack = push_node(stack, ft_atoi(argv[i]));
@@ -85,8 +84,8 @@ dnode	*ft_parse2(char *argv2, dnode *stack)
 			if (!ft_int(ft_atoi(tab[y])))
 			{
 				write(2, "Error\n", 6);
-				//ft_free_tab une fonction qui free toutes le tab
-				//ft free stack
+				ft_free(&tab, y);
+				ft_free_stack(&stack);
 				exit(EXIT_FAILURE);
 			}
 			stack = push_node(stack, ft_atoi(tab[y]));
@@ -95,6 +94,6 @@ dnode	*ft_parse2(char *argv2, dnode *stack)
 	}
 	else
 		ft_printf("Error\n");
-	ft_free(&tab, y);
+	ft_free(&tab, ft_count_words(argv2, ' '));
 	return (stack);
 }

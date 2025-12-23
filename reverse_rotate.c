@@ -1,59 +1,63 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rotate.c                                           :+:      :+:    :+:   */
+/*   reverse_rotate.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adjelili <adjelili@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/22 17:33:50 by adjelili          #+#    #+#             */
-/*   Updated: 2025/12/23 17:20:07 by adjelili         ###   ########.fr       */
+/*   Created: 2025/12/23 17:24:15 by adjelili          #+#    #+#             */
+/*   Updated: 2025/12/23 18:07:46 by adjelili         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ra(dnode **stack_a)
+void	rra(dnode **stack_a)
 {
 	dnode	*tmp;
 	dnode	*cursor;
-
+	
 	if (ft_lstsize(*stack_a) == 1 || !stack_a || !*stack_a)
 		return ;
 	cursor = *stack_a;
-	while (cursor->next)
+	while (cursor->next->next)
 		cursor = cursor->next;
 	tmp = *stack_a;
-	*stack_a = (*stack_a)->next;
-	(*stack_a)->prev = NULL;
-	tmp->next = NULL;
-	ft_lstadd_back(stack_a, tmp);
-	tmp->prev = cursor;
+	while (tmp->next)
+		tmp = tmp->next;
+	tmp->prev = NULL;
+	cursor->next = NULL;
+	ft_lstadd_front(stack_a, tmp);
+	(*stack_a)->prev = tmp;
+	*stack_a = tmp;
 	tmp = NULL;
 	cursor = NULL;
 }
 
-void	rb(dnode **stack_b)
+void	rrb(dnode **stack_b)
 {
 	dnode	*tmp;
 	dnode	*cursor;
-
+	
 	if (ft_lstsize(*stack_b) == 1 || !stack_b || !*stack_b)
 		return ;
 	cursor = *stack_b;
-	while (cursor->next)
+	while (cursor->next->next)
 		cursor = cursor->next;
 	tmp = *stack_b;
-	*stack_b = (*stack_b)->next;
-	(*stack_b)->prev = NULL;
-	tmp->next = NULL;
-	ft_lstadd_back(stack_b, tmp);
-	tmp->prev = cursor;
+	while (tmp->next)
+		tmp = tmp->next;
+	tmp->prev = NULL;
+	cursor->next = NULL;
+	ft_lstadd_front(stack_b, tmp);
+	(*stack_b)->prev = tmp;
+	*stack_b = tmp;
 	tmp = NULL;
 	cursor = NULL;
 }
 
-void	rr(dnode **stack_a, dnode **stack_b)
+void	rrr(dnode **stack_a, dnode **stack_b)
 {
-	ra(stack_a);
-	rb(stack_b);
+	rra(stack_a);
+	rrb(stack_b);
 }
