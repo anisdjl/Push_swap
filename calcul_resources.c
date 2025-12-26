@@ -1,28 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_free_stack.c                                    :+:      :+:    :+:   */
+/*   calcul_resources.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adjelili <adjelili@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/23 18:12:46 by adjelili          #+#    #+#             */
-/*   Updated: 2025/12/26 09:30:39 by adjelili         ###   ########.fr       */
+/*   Created: 2025/12/26 09:33:16 by adjelili          #+#    #+#             */
+/*   Updated: 2025/12/26 11:23:03 by adjelili         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_free_stack(dnode **stack)
+int	calcul_pos(dnode *stack, int pos)
 {
-	dnode	*tmp;
+	int	size;
 	
-	if (!stack || !*stack)
-		return ;
-	tmp = *stack;
-	while (tmp && *stack)
-	{
-		*stack = (*stack)->next;
-		free (tmp);
-		tmp = *stack;
-	}
+	size = ft_lstsize(stack);
+	if (pos <= size / 2)
+		return (pos);
+	else
+		return (size - pos);
+}
+
+int	calcul_cost(dnode *stack_a, dnode *stack_b)
+{
+	int	pos;
+	
 }

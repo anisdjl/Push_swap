@@ -6,7 +6,7 @@
 /*   By: adjelili <adjelili@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/14 16:34:31 by adjelili          #+#    #+#             */
-/*   Updated: 2025/12/23 18:20:28 by adjelili         ###   ########.fr       */
+/*   Updated: 2025/12/26 11:09:22 by adjelili         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,5 +63,6 @@ void		rra(dnode **stack_a);
 void		rrb(dnode **stack_b);
 void		rrr(dnode **stack_a, dnode **stack_b);
 void		ft_free_stack(dnode **stack);
+int			calcul_pos(dnode *stack, int pos);
 
 #endif
