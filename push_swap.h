@@ -6,7 +6,7 @@
 /*   By: adjelili <adjelili@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/14 16:34:31 by adjelili          #+#    #+#             */
-/*   Updated: 2025/12/26 11:09:22 by adjelili         ###   ########.fr       */
+/*   Updated: 2025/12/29 14:50:07 by adjelili         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,14 @@ typedef struct	dnode
 	int		value;
 	struct	dnode *prev;
 }	dnode;
+
+typedef struct bpos
+{
+	int	cost_a;
+	int	cost_b;
+	int pos;
+	int best_cost;
+} best_pos;
 
 int			ft_print_int(int n);
 int			ft_test_format(char c, va_list *args);
@@ -64,5 +72,6 @@ void		rrb(dnode **stack_b);
 void		rrr(dnode **stack_a, dnode **stack_b);
 void		ft_free_stack(dnode **stack);
 int			calcul_pos(dnode *stack, int pos);
+void		push_swap(dnode **stack_a, dnode **stack_b);
 
 #endif
