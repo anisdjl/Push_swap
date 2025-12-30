@@ -6,7 +6,7 @@
 /*   By: adjelili <adjelili@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/26 09:33:16 by adjelili          #+#    #+#             */
-/*   Updated: 2025/12/29 15:21:49 by adjelili         ###   ########.fr       */
+/*   Updated: 2025/12/30 17:10:46 by adjelili         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	ft_cost_a(dnode *stack, int pos)
 	if (pos <= size / 2)
 		return (pos);
 	else
-		return (size - pos);
+		return ((size - pos) * -1);
 }
 /* elle renvoie la pos de la cible qui est le nombre de rb ou rrb a faire */
 int	ft_cost_b(dnode *stack_b, int value)
@@ -49,74 +49,70 @@ int	ft_cost_b(dnode *stack_b, int value)
 			ptr = ptr->next;
 		}
 	}
-	return (find_pos);
+	else
+		plus_petit = pos_of_max(stack_b); // trouver le position du max
+	return (find_pos(stack_b, plus_petit));
 }
 /* renvoie la postion */
 int	find_pos(dnode *stack, int value)
 {
 	int pos;
 	
-	pos = 1;
-	while(stack)
+	dnode	*tmp;
+	
+	tmp = stack;
+	pos = 0;
+	while(tmp->value != value)
 	{
-		if (stack->value != value)
-		{	
-			stack = stack->next;
-			pos++;
-		}
+		tmp = tmp->next;
+		pos++;
 	}
+	pos = ft_cost_a(stack, pos);
 	return (pos);
 }
 
 best_pos	ft_find_best_cost(dnode *stack_a, dnode *stack_b)
 {
-	int	total;
-	int	cost_a;
-	int cost_b;
-	int	pos;
+	int			total;
+	dnode		*tmp;
+	int			pos;
 	best_pos	best;
 	
 	total = 0;
-	pos = 1;
+	pos = 0;
+	tmp = stack_a;
 	best.best_cost = 2147483647;
-	while (stack_a)
+	while (tmp)
 	{
-		cost_a = ft_cost_a(stack_a, pos);
-		cost_b = ft_cost_b(stack_b, stack_a->value);
-		total = ft_opti(cost_a, cost_b);
+		total = ft_opti(ft_cost_a(stack_a, pos), ft_cost_b(stack_b, tmp->value));
 		if (total < best.best_cost)
-		{
-			best.cost_a = cost_a;
-			best.cost_b = cost_b;
-			best.pos = pos;
-			best.best_cost = total;
-		}
+			update_best(&best, ft_cost_a(stack_a, pos), ft_cost_b(stack_b, tmp->value), pos, total);
+		tmp = tmp->next;
 		pos++;
 	}
 	return (best);
 }
 
-int	ft_opti(int cost_a, int cost_b)
+int	pos_of_max(dnode *stack_b)
 {
-	int	total;
+	int	pos;
+	int max;
+	int pos_of_max;
 	
-	if (cost_a > 0 && cost_b > 0)
+	pos = 0;
+	max = stack_b->value;
+	pos_of_max = 0;
+	while (stack_b)
 	{
-		if (cost_a > cost_b)
-			total = cost_a;
-		else
-			total = cost_b;
+		if (stack_b->value > max)
+		{
+			max = stack_b->value;
+			pos_of_max = pos;
+		}
+		stack_b = stack_b->next;
+		pos++;
 	}
-	else if (cost_a < 0 && cost_b < 0)
-	{
-		if (cost_a < cost_b)
-			total = cost_a * (-1);
-		else
-			total = cost_b * (-1);
-	}
-	else
-		total = cost_a + cost_b;
-	return (total);
+	return (max);
 }
 
 // j'envoie les stacks a et b à une fonction qui va vider la stack_a (sauf 3 elements) dans b

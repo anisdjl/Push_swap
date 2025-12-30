@@ -6,7 +6,7 @@
 /*   By: adjelili <adjelili@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/14 16:34:31 by adjelili          #+#    #+#             */
-/*   Updated: 2025/12/29 14:50:07 by adjelili         ###   ########.fr       */
+/*   Updated: 2025/12/30 17:56:07 by adjelili         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ typedef struct bpos
 	int	cost_b;
 	int pos;
 	int best_cost;
-} best_pos;
+}	best_pos;
 
 int			ft_print_int(int n);
 int			ft_test_format(char c, va_list *args);
@@ -71,7 +71,23 @@ void		rra(dnode **stack_a);
 void		rrb(dnode **stack_b);
 void		rrr(dnode **stack_a, dnode **stack_b);
 void		ft_free_stack(dnode **stack);
-int			calcul_pos(dnode *stack, int pos);
 void		push_swap(dnode **stack_a, dnode **stack_b);
+best_pos	ft_find_best_cost(dnode *stack_a, dnode *stack_b);
+int			is_positive(int value);
+int			ft_opti(int cost_a, int cost_b);
+int			ft_opti2(int cost_a, int cost_b);
+void		ft_execute_postive(dnode **stack_a, dnode **stack_b, best_pos best);
+void		ft_execute_negative(dnode **stack_a, dnode **stack_b, best_pos best);
+void		ft_execute_else(dnode **stack_a, dnode **stack_b, best_pos best);
+void		ft_execute_else2(dnode **stack_a, dnode **stack_b, best_pos best);
+int			ft_cost_a(dnode *stack, int pos);
+int			ft_cost_b(dnode *stack_b, int value);
+int			find_pos(dnode *stack, int value);
+best_pos	ft_find_best_cost(dnode *stack_a, dnode *stack_b);
+void		push_to_b(dnode **stack_a, dnode **stack_b);
+void		ft_execute_best_pos(dnode **stack_a, dnode **stack_b, best_pos best);
+void		update_best(best_pos *best, int cost_a, int cost_b, int pos, int total);
+int			pos_of_max(dnode *stack_b);
+void		final_rotate(dnode **stack_b, int pos);
 
 #endif
