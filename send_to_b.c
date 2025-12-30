@@ -6,7 +6,7 @@
 /*   By: adjelili <adjelili@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/26 09:33:16 by adjelili          #+#    #+#             */
-/*   Updated: 2025/12/30 17:10:46 by adjelili         ###   ########.fr       */
+/*   Updated: 2025/12/30 18:30:47 by adjelili         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,6 @@ int	ft_cost_b(dnode *stack_b, int value)
 int	find_pos(dnode *stack, int value)
 {
 	int pos;
-	
 	dnode	*tmp;
 	
 	tmp = stack;
