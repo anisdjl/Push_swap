@@ -6,7 +6,7 @@
 /*   By: adjelili <adjelili@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/26 09:33:16 by adjelili          #+#    #+#             */
-/*   Updated: 2025/12/31 10:58:35 by adjelili         ###   ########.fr       */
+/*   Updated: 2025/12/31 12:54:18 by adjelili         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	ft_cost_a(dnode *stack, int pos)
 	int	size;
 	
 	if (!stack)
-		return (1);
+		return (0);
 	size = ft_lstsize(stack);
 	if (pos <= size / 2)
 		return (pos);
@@ -49,7 +49,7 @@ int	ft_cost_b(dnode *stack_b, int value)
 		}
 	}
 	else
-		plus_petit = pos_of_max(stack_b);
+		plus_petit = value_max(stack_b);
 	return (find_pos(stack_b, plus_petit));
 }
 
@@ -58,9 +58,11 @@ int	find_pos(dnode *stack, int value)
 	int 	pos;
 	dnode	*tmp;
 	
+	if (!stack)
+		return (0);
 	tmp = stack;
 	pos = 0;
-	while(tmp->value != value)
+	while(tmp &&tmp->value != value)
 	{
 		tmp = tmp->next;
 		pos++;
@@ -91,7 +93,7 @@ best_pos	ft_find_best_cost(dnode *stack_a, dnode *stack_b)
 	return (best);
 }
 
-int	pos_of_max(dnode *stack_b)
+int	value_max(dnode *stack_b)
 {
 	int	pos;
 	int max;

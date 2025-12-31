@@ -6,7 +6,7 @@
 /*   By: adjelili <adjelili@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/14 16:34:31 by adjelili          #+#    #+#             */
-/*   Updated: 2025/12/31 11:17:36 by adjelili         ###   ########.fr       */
+/*   Updated: 2025/12/31 14:35:03 by adjelili         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,11 +87,17 @@ best_pos	ft_find_best_cost(dnode *stack_a, dnode *stack_b);
 void		push_to_b(dnode **stack_a, dnode **stack_b);
 void		ft_execute_best_pos(dnode **stack_a, dnode **stack_b, best_pos best);
 void		update_best(best_pos *best, int cost_a, int cost_b, int pos);
-int			pos_of_max(dnode *stack_b);
+int			value_max(dnode *stack_b);
 void		final_rotate(dnode **stack_b, int pos);
 int			find_max(dnode *stack_b, int value);
 void		ft_sort_the_3(dnode **stack_a);
 void		ft_sort_the_3_2(dnode **stack_a);
+void		push_to_a(dnode **stack_a, dnode **stack_b);
+int			is_max(dnode *stack_a, int value);
+int			find_the_target(dnode *stack_a, int value);
+int			min_pos(dnode *stack_a);
+void		ft_final_pushes(dnode **stack_a, dnode **stack_b, int pos);
+void		final_rotate_a(dnode **stack_a);
 
 /*--------------------------------------------------------------------*/
 void		display(dnode *stack);
