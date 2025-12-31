@@ -6,7 +6,7 @@
 /*   By: adjelili <adjelili@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/14 16:34:31 by adjelili          #+#    #+#             */
-/*   Updated: 2025/12/30 17:56:07 by adjelili         ###   ########.fr       */
+/*   Updated: 2025/12/31 11:17:36 by adjelili         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,11 @@
 # include <limits.h>
 # include <stdint.h>
 
-typedef struct	dnode
+typedef struct dnode
 {
-	struct	dnode *next;
-	int		value;
-	struct	dnode *prev;
+	struct dnode	*next;
+	int				value;
+	struct dnode 	*prev;
 }	dnode;
 
 typedef struct bpos
@@ -86,8 +86,14 @@ int			find_pos(dnode *stack, int value);
 best_pos	ft_find_best_cost(dnode *stack_a, dnode *stack_b);
 void		push_to_b(dnode **stack_a, dnode **stack_b);
 void		ft_execute_best_pos(dnode **stack_a, dnode **stack_b, best_pos best);
-void		update_best(best_pos *best, int cost_a, int cost_b, int pos, int total);
+void		update_best(best_pos *best, int cost_a, int cost_b, int pos);
 int			pos_of_max(dnode *stack_b);
 void		final_rotate(dnode **stack_b, int pos);
+int			find_max(dnode *stack_b, int value);
+void		ft_sort_the_3(dnode **stack_a);
+void		ft_sort_the_3_2(dnode **stack_a);
+
+/*--------------------------------------------------------------------*/
+void		display(dnode *stack);
 
 #endif

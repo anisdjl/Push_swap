@@ -6,7 +6,7 @@
 /*   By: adjelili <adjelili@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/15 16:00:17 by adjelili          #+#    #+#             */
-/*   Updated: 2025/12/30 17:22:57 by adjelili         ###   ########.fr       */
+/*   Updated: 2025/12/31 10:16:29 by adjelili         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,8 +67,6 @@ int	main(int argc, char **argv)
 	
 	display(stack_a);
 	printf("\n");
-	rrb(&stack_b);
-	rrb(&stack_b);
 	display(stack_b);
 
 	ft_free_stack(&stack_a);

@@ -6,13 +6,13 @@
 /*   By: adjelili <adjelili@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 14:16:10 by adjelili          #+#    #+#             */
-/*   Updated: 2025/12/23 18:33:14 by adjelili         ###   ########.fr       */
+/*   Updated: 2025/12/31 10:46:54 by adjelili         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int ft_int(long value)
+int	ft_int(long value)
 {
 	if (value > INT_MAX || value < INT_MIN)
 		return (0);

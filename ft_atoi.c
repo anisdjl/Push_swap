@@ -6,7 +6,7 @@
 /*   By: adjelili <adjelili@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/06 13:09:28 by adjelili          #+#    #+#             */
-/*   Updated: 2025/12/19 15:48:25 by adjelili         ###   ########.fr       */
+/*   Updated: 2025/12/31 10:45:00 by adjelili         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 long	ft_atoi(char *nptr)
 {
-	int	y;
-	int	sign;
+	int		y;
+	int		sign;
 	long	total;
 
 	total = 0;
@@ -37,4 +37,3 @@ long	ft_atoi(char *nptr)
 	}
 	return (total * sign);
 }
-

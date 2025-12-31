@@ -1,28 +1,15 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_free_stack.c                                    :+:      :+:    :+:   */
+/*   verif.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adjelili <adjelili@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/23 18:12:46 by adjelili          #+#    #+#             */
-/*   Updated: 2025/12/31 10:46:09 by adjelili         ###   ########.fr       */
+/*   Created: 2025/12/31 10:52:08 by adjelili          #+#    #+#             */
+/*   Updated: 2025/12/31 10:53:00 by adjelili         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
-
-void	ft_free_stack(dnode **stack)
-{
-	dnode	*tmp;
-
-	if (!stack || !*stack)
-		return ;
-	tmp = *stack;
-	while (tmp && *stack)
-	{
-		*stack = (*stack)->next;
-		free (tmp);
-		tmp = *stack;
-	}
-}
+// verifie si a est deja trie en croissant ou en decroissant 
+// si en croissant on fait rien 
+// si en decroissant on fait des ra ou de rra

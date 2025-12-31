@@ -6,7 +6,7 @@
 /*   By: adjelili <adjelili@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/15 15:57:05 by adjelili          #+#    #+#             */
-/*   Updated: 2025/12/26 09:30:29 by adjelili         ###   ########.fr       */
+/*   Updated: 2025/12/31 10:45:43 by adjelili         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,8 @@ int	ft_check_digit(int argc, char **argv)
 	while (y < argc)
 	{
 		a = 0;
-		if ((argv[y][0] == '-' || argv[y][0] == '+') && (ft_isdigit(argv[y][1])))
+		if ((argv[y][0] == '-' || argv[y][0] == '+')
+			&& (ft_isdigit(argv[y][1])))
 			a++;
 		while (argv[y][a])
 		{
