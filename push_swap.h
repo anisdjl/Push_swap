@@ -6,7 +6,7 @@
 /*   By: adjelili <adjelili@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/14 16:34:31 by adjelili          #+#    #+#             */
-/*   Updated: 2026/01/02 15:16:15 by adjelili         ###   ########.fr       */
+/*   Updated: 2026/01/02 16:27:54 by adjelili         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,7 +102,7 @@ void		ft_final_pushes(dnode **stack_a, dnode **stack_b, int pos);
 void		final_rotate_a(dnode **stack_a);
 int			sorted(dnode *stack_a);
 void		write_error(dnode **stack);
-
+int	only_spaces(int argc, char **argv);
 /*--------------------------------------------------------------------*/
 void		display(dnode *stack);
 

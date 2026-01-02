@@ -6,7 +6,7 @@
 /*   By: adjelili <adjelili@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/31 10:52:08 by adjelili          #+#    #+#             */
-/*   Updated: 2026/01/02 14:46:25 by adjelili         ###   ########.fr       */
+/*   Updated: 2026/01/02 16:27:40 by adjelili         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,4 +51,19 @@ void	ft_execute_negative2(dnode **stack_a, dnode **stack_b, best_pos best)
 		ft_printf("rrb\n");
 		best.cost_b++;
 	}	
+}
+
+int	only_spaces(int argc, char **argv)
+{
+	int	i;
+	
+	i = 0;
+	while (argv[1][i])
+	{
+		if (argv[1][i] != ' ')
+			return (0);
+		else
+			i++;
+	}
+	return (1);
 }

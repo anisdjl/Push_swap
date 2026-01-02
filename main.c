@@ -6,7 +6,7 @@
 /*   By: adjelili <adjelili@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/15 16:00:17 by adjelili          #+#    #+#             */
-/*   Updated: 2026/01/02 16:17:15 by adjelili         ###   ########.fr       */
+/*   Updated: 2026/01/02 16:23:33 by adjelili         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ int	main(int argc, char **argv)
 	stack_b = NULL;
 	if (argc == 1)
 		return (0);
-	if (argc == 2 && argv[1][0] == '\0')
+	if (argc == 2 && argv[1][0] == '\0' || only_spaces(argc, argv))
 	{
 		write(1, "Error\n", 6);
 		exit(EXIT_FAILURE);
