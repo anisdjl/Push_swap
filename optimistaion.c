@@ -6,7 +6,7 @@
 /*   By: adjelili <adjelili@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/30 10:55:33 by adjelili          #+#    #+#             */
-/*   Updated: 2025/12/31 10:43:26 by adjelili         ###   ########.fr       */
+/*   Updated: 2026/01/02 14:36:51 by adjelili         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@ int	is_positive(int value)
 
 int	find_max(dnode *stack_b, int value)
 {
-	int 	i;
+	int		i;
 	dnode	*tmp;
-	
+
 	tmp = stack_b;
 	i = 0;
 	while (tmp && tmp->value != value)
@@ -62,7 +62,7 @@ int	ft_opti2(int cost_a, int cost_b)
 {
 	int	total;
 
-	if (cost_a < 0 && cost_b > 0)
+	if (cost_a < 0 && cost_b >= 0)
 		total = cost_a * (-1) + cost_b;
 	else
 		total = cost_a + cost_b * (-1);

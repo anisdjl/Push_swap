@@ -6,7 +6,7 @@
 /*   By: adjelili <adjelili@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 14:16:10 by adjelili          #+#    #+#             */
-/*   Updated: 2025/12/31 10:46:54 by adjelili         ###   ########.fr       */
+/*   Updated: 2026/01/02 10:39:00 by adjelili         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ dnode	*ft_parse(int argc, char **argv, dnode *stack)
 			}
 		}
 		else
-			ft_printf("Error\n");
+			write_error(&stack);
 	}
 	return (stack);
 }
@@ -93,7 +93,7 @@ dnode	*ft_parse2(char *argv2, dnode *stack)
 		}
 	}
 	else
-		ft_printf("Error\n");
+		write_error(&stack);
 	ft_free(&tab, ft_count_words(argv2, ' '));
 	return (stack);
 }

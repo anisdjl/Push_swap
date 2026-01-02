@@ -6,7 +6,7 @@
 /*   By: adjelili <adjelili@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/31 10:49:54 by adjelili          #+#    #+#             */
-/*   Updated: 2025/12/31 15:09:45 by adjelili         ###   ########.fr       */
+/*   Updated: 2026/01/02 14:41:03 by adjelili         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,31 +15,31 @@
 void	push_to_a(dnode **stack_a, dnode **stack_b)
 {
 	int	pos;
+
 	while (ft_lstsize(*stack_b) > 0)
 	{
 		if (is_max(*stack_a, (*stack_b)->value))
 			pos = min_pos(*stack_a);
 		else
 			pos = find_the_target(*stack_a, (*stack_b)->value);
-		//ft_printf("%d", pos);
 		ft_final_pushes(stack_a, stack_b, pos);
 	}
 	final_rotate_a(stack_a);
 }
 
-int		is_max(dnode *stack_a, int value)
+int	is_max(dnode *stack_a, int value)
 {
 	dnode	*tmp;
-	
+
 	tmp = stack_a;
 	while (tmp)
 	{
 		if (tmp->value > value)
-			return (1);
+			return (0);
 		else
 			tmp = tmp->next;
 	}
-	return (0);
+	return (1);
 }
 
 int	find_the_target(dnode *stack_a, int value)
@@ -70,21 +70,19 @@ int	find_the_target(dnode *stack_a, int value)
 
 int	min_pos(dnode *stack_a)
 {
-	int min;
-	int	pos;
+	int		min;
+	int		pos;
 	dnode	*tmp;
-	
+
 	tmp = stack_a;
 	min = tmp->value;
-	while(tmp)
+	while (tmp)
 	{
 		if (tmp->value < min)
 			min = tmp->value;
 		tmp = tmp->next;
 	}
-	//ft_printf("----------min%d----------", min);
-	pos = find_max(stack_a, min); // le probleme est ici
-	//ft_printf("%d", pos);
+	pos = find_max(stack_a, min);
 	return (pos);
 }
 
@@ -105,7 +103,7 @@ void	ft_final_pushes(dnode **stack_a, dnode **stack_b, int pos)
 		{
 			rra(stack_a);
 			ft_printf("rra\n");
-			pos--;
+			pos++;
 		}
 	}
 	pa(stack_a, stack_b);

@@ -6,7 +6,7 @@
 /*   By: adjelili <adjelili@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/14 16:34:31 by adjelili          #+#    #+#             */
-/*   Updated: 2025/12/31 14:35:03 by adjelili         ###   ########.fr       */
+/*   Updated: 2026/01/02 14:46:49 by adjelili         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,9 @@ int			is_positive(int value);
 int			ft_opti(int cost_a, int cost_b);
 int			ft_opti2(int cost_a, int cost_b);
 void		ft_execute_postive(dnode **stack_a, dnode **stack_b, best_pos best);
+void		ft_execute_positive2(dnode **stack_a, dnode **stack_b, best_pos best);
 void		ft_execute_negative(dnode **stack_a, dnode **stack_b, best_pos best);
+void		ft_execute_negative2(dnode **stack_a, dnode **stack_b, best_pos best);
 void		ft_execute_else(dnode **stack_a, dnode **stack_b, best_pos best);
 void		ft_execute_else2(dnode **stack_a, dnode **stack_b, best_pos best);
 int			ft_cost_a(dnode *stack, int pos);
@@ -98,6 +100,8 @@ int			find_the_target(dnode *stack_a, int value);
 int			min_pos(dnode *stack_a);
 void		ft_final_pushes(dnode **stack_a, dnode **stack_b, int pos);
 void		final_rotate_a(dnode **stack_a);
+int			sorted(dnode *stack_a);
+void	write_error(dnode **stack);
 
 /*--------------------------------------------------------------------*/
 void		display(dnode *stack);

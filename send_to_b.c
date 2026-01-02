@@ -6,7 +6,7 @@
 /*   By: adjelili <adjelili@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/26 09:33:16 by adjelili          #+#    #+#             */
-/*   Updated: 2025/12/31 12:54:18 by adjelili         ###   ########.fr       */
+/*   Updated: 2026/01/02 14:35:47 by adjelili         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int	ft_cost_a(dnode *stack, int pos)
 {
 	int	size;
-	
+
 	if (!stack)
 		return (0);
 	size = ft_lstsize(stack);
@@ -55,14 +55,14 @@ int	ft_cost_b(dnode *stack_b, int value)
 
 int	find_pos(dnode *stack, int value)
 {
-	int 	pos;
+	int		pos;
 	dnode	*tmp;
-	
+
 	if (!stack)
 		return (0);
 	tmp = stack;
 	pos = 0;
-	while(tmp &&tmp->value != value)
+	while (tmp && tmp->value != value)
 	{
 		tmp = tmp->next;
 		pos++;
@@ -77,16 +77,18 @@ best_pos	ft_find_best_cost(dnode *stack_a, dnode *stack_b)
 	dnode		*tmp;
 	int			pos;
 	best_pos	best;
-	
+
 	total = 0;
 	pos = 0;
 	tmp = stack_a;
 	best.best_cost = 2147483647;
 	while (tmp)
 	{
-		total = ft_opti(ft_cost_a(stack_a, pos), ft_cost_b(stack_b, tmp->value));
+		total = ft_opti(ft_cost_a(stack_a, pos),
+				ft_cost_b(stack_b, tmp->value));
 		if (total < best.best_cost)
-			update_best(&best, ft_cost_a(stack_a, pos), ft_cost_b(stack_b, tmp->value), pos);
+			update_best(&best, ft_cost_a(stack_a, pos),
+				ft_cost_b(stack_b, tmp->value), pos);
 		tmp = tmp->next;
 		pos++;
 	}
@@ -96,9 +98,9 @@ best_pos	ft_find_best_cost(dnode *stack_a, dnode *stack_b)
 int	value_max(dnode *stack_b)
 {
 	int	pos;
-	int max;
-	int pos_of_max;
-	
+	int	max;
+	int	pos_of_max;
+
 	pos = 0;
 	max = stack_b->value;
 	pos_of_max = 0;

@@ -6,7 +6,7 @@
 /*   By: adjelili <adjelili@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/30 11:07:50 by adjelili          #+#    #+#             */
-/*   Updated: 2025/12/31 10:17:48 by adjelili         ###   ########.fr       */
+/*   Updated: 2026/01/02 14:47:07 by adjelili         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	ft_execute_postive(dnode **stack_a, dnode **stack_b, best_pos best)
 		rr(stack_a, stack_b);
 		ft_printf("rr\n");
 		best.cost_a--;
-		best.cost_b--;			
+		best.cost_b--;
 	}
 	if (best.cost_a > 0)
 	{
@@ -31,14 +31,7 @@ void	ft_execute_postive(dnode **stack_a, dnode **stack_b, best_pos best)
 		}
 	}
 	else if (best.cost_b > 0)
-	{
-		while (best.cost_b > 0)
-		{
-			rb(stack_b);
-			ft_printf("rb\n");
-			best.cost_b--;
-		}	
-	}
+		ft_execute_positive2(stack_a, stack_b, best);
 	pb(stack_b, stack_a);
 	ft_printf("pb\n");
 }
@@ -50,7 +43,7 @@ void	ft_execute_negative(dnode **stack_a, dnode **stack_b, best_pos best)
 		rrr(stack_a, stack_b);
 		ft_printf("rrr\n");
 		best.cost_a++;
-		best.cost_b++;			
+		best.cost_b++;
 	}
 	if (best.cost_a < 0)
 	{
@@ -62,14 +55,7 @@ void	ft_execute_negative(dnode **stack_a, dnode **stack_b, best_pos best)
 		}
 	}
 	else if (best.cost_b < 0)
-	{
-		while (best.cost_b < 0)
-		{
-			rrb(stack_b);
-			ft_printf("rrb\n");
-			best.cost_b++;
-		}	
-	}
+		ft_execute_negative2(stack_a, stack_b, best);
 	pb(stack_b, stack_a);
 	ft_printf("pb\n");
 }
@@ -127,10 +113,12 @@ void	final_rotate(dnode **stack_b, int pos)
 		}
 	}
 	else
+	{
 		while (pos < 0)
 		{
 			rrb(stack_b);
 			ft_printf("rrb\n");
 			pos++;
 		}
+	}
 }

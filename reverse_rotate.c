@@ -6,7 +6,7 @@
 /*   By: adjelili <adjelili@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/23 17:24:15 by adjelili          #+#    #+#             */
-/*   Updated: 2025/12/23 18:07:46 by adjelili         ###   ########.fr       */
+/*   Updated: 2026/01/02 14:24:31 by adjelili         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	rra(dnode **stack_a)
 {
 	dnode	*tmp;
 	dnode	*cursor;
-	
+
 	if (ft_lstsize(*stack_a) == 1 || !stack_a || !*stack_a)
 		return ;
 	cursor = *stack_a;
@@ -38,7 +38,7 @@ void	rrb(dnode **stack_b)
 {
 	dnode	*tmp;
 	dnode	*cursor;
-	
+
 	if (ft_lstsize(*stack_b) == 1 || !stack_b || !*stack_b)
 		return ;
 	cursor = *stack_b;
