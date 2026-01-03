@@ -49,8 +49,6 @@ You can also visualize the sorting with this beautiful visualizer :
 
 For this project i needed different resources for different notions
 
-## algorithm and complexity :
-
 [complexity](https://www.geeksforgeeks.org/dsa/complete-guide-on-complexity-analysis/)
 
 [algorithms](https://www.geeksforgeeks.org/dsa/sorting-algorithms/)
