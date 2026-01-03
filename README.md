@@ -32,10 +32,10 @@ Next, to run this program you can either do :
 ```c
 ./push_swap "1 5 88 -47 0" // (with double quotes)
 ```
-Or without it :
+Or with :
 
 ```c
-./push_swap 1 5 88 -47 0
+./push_swap 1 5 88 -47 0 // (without double quotes)
 ```
 ## Notes
 
