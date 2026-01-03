@@ -8,7 +8,7 @@ The goal is to sort the stack using the smallest possible number of operations.
 The program works with two stacks and applies specific instructions to move, swap, and
 rotate elements in order to achieve an optimized sorting process.
 
-# Instruction
+# Instructions
 
 For this project i used an algorithm called the turk algorithm which is a greedy algorithm.
 The algorithm works by progressively moving elements between two stacks and always
@@ -40,14 +40,14 @@ Or with :
 ## Notes
 
 Note that the program doesn't accept numbers other than integers and doesn't handle duplicate.
-If you try to nothing will happen.
+If you provide invalid input, the program will not run.
 
 You can also visualize the sorting with this beautiful visualizer :
 [visualizer](https://github.com/o-reo/push_swap_visualizer)
 
 # Resources
 
-For this project i needed different resources for different notions
+For this project i needed different ressources for different notions
 
 [complexity](https://www.geeksforgeeks.org/dsa/complete-guide-on-complexity-analysis/)
 
@@ -61,7 +61,7 @@ For this project i needed different resources for different notions
 
 ## AI
 
-For this project i used Ai for :
+For this project i used AI for :
 
 understanding how to implement a stack
 
