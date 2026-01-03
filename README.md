@@ -64,6 +64,9 @@ For this project i needed different resources for different notions
 ## AI
 
 For this project i used Ai for :
--understanding how to implement a stack
--learning to make a makefile that uses another makefile
--debug some things at the end of the project cause it became too hard to debug locally
+
+understanding how to implement a stack
+
+learning to make a makefile that uses another makefile
+
+debug some things at the end of the project cause it became too hard to debug locally
