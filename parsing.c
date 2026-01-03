@@ -6,7 +6,7 @@
 /*   By: adjelili <adjelili@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 14:16:10 by adjelili          #+#    #+#             */
-/*   Updated: 2026/01/02 10:39:00 by adjelili         ###   ########.fr       */
+/*   Updated: 2026/01/03 14:42:10 by adjelili         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ int	ft_count_words(char const *s, char c)
 	return (nbwords);
 }
 
-dnode	*ft_parse(int argc, char **argv, dnode *stack)
+t_dnode	*ft_parse(int argc, char **argv, t_dnode *stack)
 {
 	int		i;
 
@@ -69,7 +69,7 @@ dnode	*ft_parse(int argc, char **argv, dnode *stack)
 	return (stack);
 }
 
-dnode	*ft_parse2(char *argv2, dnode *stack)
+t_dnode	*ft_parse2(char *argv2, t_dnode *stack)
 {
 	int		y;
 	char	**tab;

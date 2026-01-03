@@ -1,42 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adjelili <adjelili@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/20 09:39:01 by adjelili          #+#    #+#             */
-/*   Updated: 2025/12/22 09:56:03 by adjelili         ###   ########.fr       */
+/*   Created: 2025/11/14 10:48:53 by adjelili          #+#    #+#             */
+/*   Updated: 2026/01/03 12:50:12 by adjelili         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	ft_printf(const char *format, ...)
+void	ft_lstadd_back(t_dnode **stack, t_dnode *new)
 {
-	int		y;
-	int		count;
-	va_list	args;
+	t_dnode	*ptr;
 
-	va_start(args, format);
-	if (!format)
-		return (-1);
-	y = 0;
-	count = 0;
-	while (format[y])
+	if (*stack == NULL)
+		*stack = new;
+	else
 	{
-		if (format[y] == '%')
-		{
-			y++;
-			count += ft_test_format(format[y], &args);
-		}
-		else
-		{
-			write(1, &format[y], 1);
-			count += 1;
-		}
+		ptr = *stack;
+		while (ptr->next)
+			ptr = ptr->next;
+		ptr->next = new;
+	}
+}
+
+int	ft_lstsize(t_dnode *lst)
+{
+	int	y;
+
+	y = 0;
+	while (lst)
+	{
+		lst = lst->next;
 		y++;
 	}
-	va_end(args);
-	return (count);
+	return (y);
+}
+
+void	ft_lstadd_front(t_dnode **stack, t_dnode *new)
+{
+	new->next = *stack;
+	*stack = new;
 }

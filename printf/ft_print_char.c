@@ -1,43 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_uint.c                                    :+:      :+:    :+:   */
+/*   ft_print_char.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adjelili <adjelili@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/21 14:09:58 by adjelili          #+#    #+#             */
-/*   Updated: 2025/12/15 12:09:48 by adjelili         ###   ########.fr       */
+/*   Created: 2025/11/20 15:18:51 by adjelili          #+#    #+#             */
+/*   Updated: 2026/01/03 13:19:12 by adjelili         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "ft_printf.h"
 
-static int	ft_count(unsigned int n)
+int	ft_print_char(char c)
 {
-	int	count;
-
-	count = 0;
-	if (n == 0)
-	{
-		count = 1;
-		return (count);
-	}
-	while (n != 0)
-	{
-		n = n / 10;
-		count++;
-	}
-	return (count);
-}
-
-int	ft_print_uint(unsigned int n)
-{
-	if (n >= 10)
-	{
-		ft_print_uint(n / 10);
-		ft_print_uint(n % 10);
-	}
-	else
-		ft_print_char(n + '0');
-	return (ft_count(n));
+	write(1, &c, 1);
+	return (1);
 }

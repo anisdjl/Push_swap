@@ -1,28 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
+/*   ft_print_uint.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adjelili <adjelili@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/14 10:48:53 by adjelili          #+#    #+#             */
-/*   Updated: 2025/12/23 17:06:50 by adjelili         ###   ########.fr       */
+/*   Created: 2025/11/21 14:09:58 by adjelili          #+#    #+#             */
+/*   Updated: 2026/01/03 13:18:23 by adjelili         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "ft_printf.h"
 
-void	ft_lstadd_back(dnode **stack, dnode *new)
+static int	ft_count(unsigned int n)
 {
-	dnode	*ptr;
+	int	count;
 
-	if (*stack == NULL)
-		*stack = new;
-	else
+	count = 0;
+	if (n == 0)
 	{
-		ptr = *stack;
-		while (ptr->next)
-			ptr = ptr->next;
-		ptr->next = new;
+		count = 1;
+		return (count);
 	}
+	while (n != 0)
+	{
+		n = n / 10;
+		count++;
+	}
+	return (count);
+}
+
+int	ft_print_uint(unsigned int n)
+{
+	if (n >= 10)
+	{
+		ft_print_uint(n / 10);
+		ft_print_uint(n % 10);
+	}
+	else
+		ft_print_char(n + '0');
+	return (ft_count(n));
 }

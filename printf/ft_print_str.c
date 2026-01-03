@@ -1,19 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_char.c                                    :+:      :+:    :+:   */
+/*   ft_print_str.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adjelili <adjelili@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/20 15:18:51 by adjelili          #+#    #+#             */
-/*   Updated: 2025/12/15 12:10:38 by adjelili         ###   ########.fr       */
+/*   Created: 2025/11/21 10:17:48 by adjelili          #+#    #+#             */
+/*   Updated: 2026/01/03 13:18:16 by adjelili         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "ft_printf.h"
 
-int	ft_print_char(char c)
+int	ft_print_str(char *str)
 {
-	write(1, &c, 1);
-	return (1);
+	int	y;
+
+	if (!str)
+	{
+		write(1, "(null)", 6);
+		return (6);
+	}
+	y = 0;
+	while (str[y])
+	{
+		write(1, &str[y], 1);
+		y++;
+	}
+	return (y);
 }

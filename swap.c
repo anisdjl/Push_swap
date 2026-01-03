@@ -6,13 +6,13 @@
 /*   By: adjelili <adjelili@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/22 09:39:29 by adjelili          #+#    #+#             */
-/*   Updated: 2026/01/02 14:25:53 by adjelili         ###   ########.fr       */
+/*   Updated: 2026/01/03 12:59:05 by adjelili         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	sa(dnode *stack_a)
+void	sa(t_dnode *stack_a)
 {
 	int	tmp;
 
@@ -23,7 +23,7 @@ void	sa(dnode *stack_a)
 	stack_a->next->value = tmp;
 }
 
-void	sb(dnode *stack_b)
+void	sb(t_dnode *stack_b)
 {
 	int	tmp;
 
@@ -34,7 +34,7 @@ void	sb(dnode *stack_b)
 	stack_b->next->value = tmp;
 }
 
-void	ss(dnode *stack_a, dnode *stack_b)
+void	ss(t_dnode *stack_a, t_dnode *stack_b)
 {
 	sa(stack_a);
 	sb(stack_b);

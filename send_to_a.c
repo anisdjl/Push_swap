@@ -6,13 +6,13 @@
 /*   By: adjelili <adjelili@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/31 10:49:54 by adjelili          #+#    #+#             */
-/*   Updated: 2026/01/02 14:41:03 by adjelili         ###   ########.fr       */
+/*   Updated: 2026/01/03 12:57:47 by adjelili         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	push_to_a(dnode **stack_a, dnode **stack_b)
+void	push_to_a(t_dnode **stack_a, t_dnode **stack_b)
 {
 	int	pos;
 
@@ -27,9 +27,9 @@ void	push_to_a(dnode **stack_a, dnode **stack_b)
 	final_rotate_a(stack_a);
 }
 
-int	is_max(dnode *stack_a, int value)
+int	is_max(t_dnode *stack_a, int value)
 {
-	dnode	*tmp;
+	t_dnode	*tmp;
 
 	tmp = stack_a;
 	while (tmp)
@@ -42,10 +42,10 @@ int	is_max(dnode *stack_a, int value)
 	return (1);
 }
 
-int	find_the_target(dnode *stack_a, int value)
+int	find_the_target(t_dnode *stack_a, int value)
 {
 	int		plus_grand;
-	dnode	*ptr;
+	t_dnode	*ptr;
 
 	ptr = stack_a;
 	plus_grand = value;
@@ -68,11 +68,11 @@ int	find_the_target(dnode *stack_a, int value)
 	return (find_pos(stack_a, plus_grand));
 }
 
-int	min_pos(dnode *stack_a)
+int	min_pos(t_dnode *stack_a)
 {
 	int		min;
 	int		pos;
-	dnode	*tmp;
+	t_dnode	*tmp;
 
 	tmp = stack_a;
 	min = tmp->value;
@@ -86,7 +86,7 @@ int	min_pos(dnode *stack_a)
 	return (pos);
 }
 
-void	ft_final_pushes(dnode **stack_a, dnode **stack_b, int pos)
+void	ft_final_pushes(t_dnode **stack_a, t_dnode **stack_b, int pos)
 {
 	if (pos > 0)
 	{

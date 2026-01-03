@@ -6,7 +6,7 @@
 /*   By: adjelili <adjelili@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/14 16:34:31 by adjelili          #+#    #+#             */
-/*   Updated: 2026/01/02 16:27:54 by adjelili         ###   ########.fr       */
+/*   Updated: 2026/01/03 15:31:05 by adjelili         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,92 +18,102 @@
 # include <stdarg.h>
 # include <limits.h>
 # include <stdint.h>
+# include "printf/ft_printf.h"
 
 typedef struct dnode
 {
 	struct dnode	*next;
 	int				value;
-	struct dnode 	*prev;
-}	dnode;
+	struct dnode	*prev;
+}	t_dnode;
 
 typedef struct bpos
 {
 	int	cost_a;
 	int	cost_b;
-	int pos;
-	int best_cost;
-}	best_pos;
+	int	pos;
+	int	best_cost;
+}	t_best_pos;
 
-int			ft_print_int(int n);
-int			ft_test_format(char c, va_list *args);
-int			ft_printf(const char *s, ...);
-int			ft_print_char(char c);
-int			ft_print_str(char *str);
-int			ft_print_uint(unsigned int n);
-int			ft_print_hex(unsigned int n, char c);
-int			ft_print_ptr(void *p);
+// =================== parsing =========================== //
+
 int			ft_check_digit(int argc, char **argv);
-int			main(int arg, char **argv);
-long		ft_atoi(char *nptr);
-int			ft_isdigit(int c);
+int			only_spaces(char **argv);
 int			ft_check_dup(int argc, char **argv);
-dnode		*ft_parse(int argc, char **argv, dnode *stack);
-dnode		*push_node(dnode *stack, int value);
-char		**ft_split(char const *s, char c);
-dnode		*ft_parse2(char *argv2, dnode *stack);
+t_dnode		*ft_parse(int argc, char **argv, t_dnode *stack);
+t_dnode		*push_node(t_dnode *stack, int value);
+t_dnode		*ft_parse2(char *argv2, t_dnode *stack);
 int			ft_count_words(char const *s, char c);
 int			ft_check_digit2(int words, char **tab);
 int			ft_check_dup2(int words, char **argv);
 char		**ft_free(char ***tab, int x);
 int			ft_int(long value);
-int			ft_lstsize(dnode *lst);
-void		ft_lstadd_back(dnode **stack, dnode *new);
-void		ft_lstadd_front(dnode **stack, dnode *new);
-void		sa(dnode *stack_a);
-void		sb(dnode *stack_b);
-void		ss(dnode *stack_a, dnode *stack_b);
-void		pa(dnode **stack_a, dnode **stack_b);
-void		pb(dnode **stack_b, dnode **stack_a);
-void		ra(dnode **stack_a);
-void		rb(dnode **stack_b);
-void		rr(dnode **stack_a, dnode **stack_b);
-void		rra(dnode **stack_a);
-void		rrb(dnode **stack_b);
-void		rrr(dnode **stack_a, dnode **stack_b);
-void		ft_free_stack(dnode **stack);
-void		push_swap(dnode **stack_a, dnode **stack_b);
-best_pos	ft_find_best_cost(dnode *stack_a, dnode *stack_b);
+
+// =================== libft ============================= //
+
+int			ft_isdigit(int c);
+long		ft_atoi(char *nptr);
+char		**ft_split(char const *s, char c);
+int			ft_lstsize(t_dnode *lst);
+void		ft_lstadd_back(t_dnode **stack, t_dnode *new);
+void		ft_lstadd_front(t_dnode **stack, t_dnode *new);
+
+// ==================== operations ======================== //
+
+void		sa(t_dnode *stack_a);
+void		sb(t_dnode *stack_b);
+void		ss(t_dnode *stack_a, t_dnode *stack_b);
+void		pa(t_dnode **stack_a, t_dnode **stack_b);
+void		pb(t_dnode **stack_b, t_dnode **stack_a);
+void		ra(t_dnode **stack_a);
+void		rb(t_dnode **stack_b);
+void		rr(t_dnode **stack_a, t_dnode **stack_b);
+void		rra(t_dnode **stack_a);
+void		rrb(t_dnode **stack_b);
+void		rrr(t_dnode **stack_a, t_dnode **stack_b);
+void		ft_free_stack(t_dnode **stack);
+
+// =================== calculs =========================== //
+
+t_best_pos	ft_find_best_cost(t_dnode *stack_a, t_dnode *stack_b);
+int			ft_cost_a(t_dnode *stack, int pos);
+int			ft_cost_b(t_dnode *stack_b, int value);
 int			is_positive(int value);
 int			ft_opti(int cost_a, int cost_b);
 int			ft_opti2(int cost_a, int cost_b);
-void		ft_execute_postive(dnode **stack_a, dnode **stack_b, best_pos best);
-void		ft_execute_positive2(dnode **stack_a, dnode **stack_b, best_pos best);
-void		ft_execute_negative(dnode **stack_a, dnode **stack_b, best_pos best);
-void		ft_execute_negative2(dnode **stack_a, dnode **stack_b, best_pos best);
-void		ft_execute_else(dnode **stack_a, dnode **stack_b, best_pos best);
-void		ft_execute_else2(dnode **stack_a, dnode **stack_b, best_pos best);
-int			ft_cost_a(dnode *stack, int pos);
-int			ft_cost_b(dnode *stack_b, int value);
-int			find_pos(dnode *stack, int value);
-best_pos	ft_find_best_cost(dnode *stack_a, dnode *stack_b);
-void		push_to_b(dnode **stack_a, dnode **stack_b);
-void		ft_execute_best_pos(dnode **stack_a, dnode **stack_b, best_pos best);
-void		update_best(best_pos *best, int cost_a, int cost_b, int pos);
-int			value_max(dnode *stack_b);
-void		final_rotate(dnode **stack_b, int pos);
-int			find_max(dnode *stack_b, int value);
-void		ft_sort_the_3(dnode **stack_a);
-void		ft_sort_the_3_2(dnode **stack_a);
-void		push_to_a(dnode **stack_a, dnode **stack_b);
-int			is_max(dnode *stack_a, int value);
-int			find_the_target(dnode *stack_a, int value);
-int			min_pos(dnode *stack_a);
-void		ft_final_pushes(dnode **stack_a, dnode **stack_b, int pos);
-void		final_rotate_a(dnode **stack_a);
-int			sorted(dnode *stack_a);
-void		write_error(dnode **stack);
-int	only_spaces(int argc, char **argv);
-/*--------------------------------------------------------------------*/
-void		display(dnode *stack);
+int			value_max(t_dnode *stack_b);
+int			find_max(t_dnode *stack_b, int value);
+int			is_max(t_dnode *stack_a, int value);
+int			min_pos(t_dnode *stack_a);
+void		update_best(t_best_pos *best, int cost_a, int cost_b, int pos);
+int			find_pos(t_dnode *stack, int value);
+
+// =================== execution ======================== //
+
+int			main(int arg, char **argv);
+void		push_swap(t_dnode **stack_a, t_dnode **stack_b);
+void		ft_execute_postive(t_dnode **stack_a,
+				t_dnode **stack_b, t_best_pos best);
+void		ft_execute_positive2(t_dnode **stack_b, t_best_pos best);
+void		ft_execute_negative(t_dnode **stack_a,
+				t_dnode **stack_b, t_best_pos best);
+void		ft_execute_negative2(t_dnode **stack_b, t_best_pos best);
+void		ft_execute_else(t_dnode **stack_a, t_dnode **stack_b,
+				t_best_pos best);
+void		ft_execute_else2(t_dnode **stack_a, t_dnode **stack_b,
+				t_best_pos best);
+void		push_to_b(t_dnode **stack_a, t_dnode **stack_b);
+void		ft_execute_best_pos(t_dnode **stack_a,
+				t_dnode **stack_b, t_best_pos best);
+void		final_rotate(t_dnode **stack_b, int pos);
+void		ft_sort_the_3(t_dnode **stack_a);
+void		ft_sort_the_3_2(t_dnode **stack_a);
+void		ft_sort_the_2(t_dnode **stack_a);
+void		push_to_a(t_dnode **stack_a, t_dnode **stack_b);
+int			find_the_target(t_dnode *stack_a, int value);
+void		ft_final_pushes(t_dnode **stack_a, t_dnode **stack_b, int pos);
+void		final_rotate_a(t_dnode **stack_a);
+int			sorted(t_dnode *stack_a);
+void		write_error(t_dnode **stack);
 
 #endif

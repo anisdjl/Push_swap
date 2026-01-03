@@ -6,15 +6,15 @@
 /*   By: adjelili <adjelili@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/31 10:52:08 by adjelili          #+#    #+#             */
-/*   Updated: 2026/01/02 16:27:40 by adjelili         ###   ########.fr       */
+/*   Updated: 2026/01/03 15:29:13 by adjelili         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	sorted(dnode *stack_a)
+int	sorted(t_dnode *stack_a)
 {
-	dnode	*ptr;
+	t_dnode	*ptr;
 
 	ptr = stack_a;
 	while (ptr->next)
@@ -26,14 +26,14 @@ int	sorted(dnode *stack_a)
 	return (1);
 }
 
-void	write_error(dnode **stack)
+void	write_error(t_dnode **stack)
 {
 	write(2, "Error\n", 6);
 	ft_free_stack(stack);
 	exit(EXIT_FAILURE);
 }
 
-void	ft_execute_positive2(dnode **stack_a, dnode **stack_b, best_pos best)
+void	ft_execute_positive2(t_dnode **stack_b, t_best_pos best)
 {
 	while (best.cost_b > 0)
 	{
@@ -43,7 +43,7 @@ void	ft_execute_positive2(dnode **stack_a, dnode **stack_b, best_pos best)
 	}
 }
 
-void	ft_execute_negative2(dnode **stack_a, dnode **stack_b, best_pos best)
+void	ft_execute_negative2(t_dnode **stack_b, t_best_pos best)
 {
 	while (best.cost_b < 0)
 	{
@@ -53,10 +53,10 @@ void	ft_execute_negative2(dnode **stack_a, dnode **stack_b, best_pos best)
 	}	
 }
 
-int	only_spaces(int argc, char **argv)
+int	only_spaces(char **argv)
 {
 	int	i;
-	
+
 	i = 0;
 	while (argv[1][i])
 	{

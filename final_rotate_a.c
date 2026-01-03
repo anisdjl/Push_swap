@@ -6,13 +6,13 @@
 /*   By: adjelili <adjelili@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/31 14:28:21 by adjelili          #+#    #+#             */
-/*   Updated: 2025/12/31 15:05:41 by adjelili         ###   ########.fr       */
+/*   Updated: 2026/01/03 15:10:54 by adjelili         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	final_rotate_a(dnode **stack_a)
+void	final_rotate_a(t_dnode **stack_a)
 {
 	int	pos_min;
 
@@ -35,4 +35,14 @@ void	final_rotate_a(dnode **stack_a)
 			pos_min++;
 		}
 	}
+}
+
+void	ft_sort_the_2(t_dnode **stack_a)
+{
+	if ((*stack_a)->value > (*stack_a)->next->value)
+	{
+		sa(*stack_a);
+		ft_printf("sa\n");
+	}
+	return ;
 }

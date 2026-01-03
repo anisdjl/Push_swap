@@ -6,13 +6,13 @@
 /*   By: adjelili <adjelili@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/26 09:33:16 by adjelili          #+#    #+#             */
-/*   Updated: 2026/01/02 14:35:47 by adjelili         ###   ########.fr       */
+/*   Updated: 2026/01/03 12:58:45 by adjelili         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	ft_cost_a(dnode *stack, int pos)
+int	ft_cost_a(t_dnode *stack, int pos)
 {
 	int	size;
 
@@ -25,10 +25,10 @@ int	ft_cost_a(dnode *stack, int pos)
 		return ((size - pos) * -1);
 }
 
-int	ft_cost_b(dnode *stack_b, int value)
+int	ft_cost_b(t_dnode *stack_b, int value)
 {
 	int		plus_petit;
-	dnode	*ptr;
+	t_dnode	*ptr;
 
 	ptr = stack_b;
 	plus_petit = value;
@@ -53,10 +53,10 @@ int	ft_cost_b(dnode *stack_b, int value)
 	return (find_pos(stack_b, plus_petit));
 }
 
-int	find_pos(dnode *stack, int value)
+int	find_pos(t_dnode *stack, int value)
 {
 	int		pos;
-	dnode	*tmp;
+	t_dnode	*tmp;
 
 	if (!stack)
 		return (0);
@@ -71,12 +71,12 @@ int	find_pos(dnode *stack, int value)
 	return (pos);
 }
 
-best_pos	ft_find_best_cost(dnode *stack_a, dnode *stack_b)
+t_best_pos	ft_find_best_cost(t_dnode *stack_a, t_dnode *stack_b)
 {
 	int			total;
-	dnode		*tmp;
+	t_dnode		*tmp;
 	int			pos;
-	best_pos	best;
+	t_best_pos	best;
 
 	total = 0;
 	pos = 0;
@@ -95,7 +95,7 @@ best_pos	ft_find_best_cost(dnode *stack_a, dnode *stack_b)
 	return (best);
 }
 
-int	value_max(dnode *stack_b)
+int	value_max(t_dnode *stack_b)
 {
 	int	pos;
 	int	max;

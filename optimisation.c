@@ -6,7 +6,7 @@
 /*   By: adjelili <adjelili@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/30 10:55:33 by adjelili          #+#    #+#             */
-/*   Updated: 2026/01/02 14:36:51 by adjelili         ###   ########.fr       */
+/*   Updated: 2026/01/03 12:52:08 by adjelili         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,10 @@ int	is_positive(int value)
 	return (0);
 }
 
-int	find_max(dnode *stack_b, int value)
+int	find_max(t_dnode *stack_b, int value)
 {
 	int		i;
-	dnode	*tmp;
+	t_dnode	*tmp;
 
 	tmp = stack_b;
 	i = 0;
@@ -69,7 +69,7 @@ int	ft_opti2(int cost_a, int cost_b)
 	return (total);
 }
 
-void	update_best(best_pos *best, int cost_a, int cost_b, int pos)
+void	update_best(t_best_pos *best, int cost_a, int cost_b, int pos)
 {
 	(*best).best_cost = ft_opti(cost_a, cost_b);
 	(*best).pos = pos;

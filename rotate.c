@@ -6,16 +6,16 @@
 /*   By: adjelili <adjelili@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/22 17:33:50 by adjelili          #+#    #+#             */
-/*   Updated: 2026/01/02 14:25:31 by adjelili         ###   ########.fr       */
+/*   Updated: 2026/01/03 12:56:44 by adjelili         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ra(dnode **stack_a)
+void	ra(t_dnode **stack_a)
 {
-	dnode	*tmp;
-	dnode	*cursor;
+	t_dnode	*tmp;
+	t_dnode	*cursor;
 
 	if (ft_lstsize(*stack_a) == 1 || !stack_a || !*stack_a)
 		return ;
@@ -32,10 +32,10 @@ void	ra(dnode **stack_a)
 	cursor = NULL;
 }
 
-void	rb(dnode **stack_b)
+void	rb(t_dnode **stack_b)
 {
-	dnode	*tmp;
-	dnode	*cursor;
+	t_dnode	*tmp;
+	t_dnode	*cursor;
 
 	if (ft_lstsize(*stack_b) == 1 || !stack_b || !*stack_b)
 		return ;
@@ -52,7 +52,7 @@ void	rb(dnode **stack_b)
 	cursor = NULL;
 }
 
-void	rr(dnode **stack_a, dnode **stack_b)
+void	rr(t_dnode **stack_a, t_dnode **stack_b)
 {
 	ra(stack_a);
 	rb(stack_b);

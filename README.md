@@ -1,2 +1,1 @@
-# Push_swap
-A sorting algorithm in C
+*this project has been created as part of the 42 curriculum by <adjelili>*

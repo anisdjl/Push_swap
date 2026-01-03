@@ -6,15 +6,15 @@
 /*   By: adjelili <adjelili@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/22 10:27:52 by adjelili          #+#    #+#             */
-/*   Updated: 2025/12/22 17:29:47 by adjelili         ###   ########.fr       */
+/*   Updated: 2026/01/03 12:55:19 by adjelili         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	pa(dnode **stack_a, dnode **stack_b)
+void	pa(t_dnode **stack_a, t_dnode **stack_b)
 {
-	dnode	*tmp;
+	t_dnode	*tmp;
 
 	if (!stack_b || !*stack_b)
 		return ;
@@ -39,9 +39,9 @@ void	pa(dnode **stack_a, dnode **stack_b)
 	tmp = NULL;
 }
 
-void	pb(dnode **stack_b, dnode **stack_a)
+void	pb(t_dnode **stack_b, t_dnode **stack_a)
 {
-	dnode	*tmp;
+	t_dnode	*tmp;
 
 	if (!stack_a || !*stack_a)
 		return ;

@@ -6,16 +6,16 @@
 /*   By: adjelili <adjelili@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/23 17:24:15 by adjelili          #+#    #+#             */
-/*   Updated: 2026/01/02 14:24:31 by adjelili         ###   ########.fr       */
+/*   Updated: 2026/01/03 15:47:52 by adjelili         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	rra(dnode **stack_a)
+void	rra(t_dnode **stack_a)
 {
-	dnode	*tmp;
-	dnode	*cursor;
+	t_dnode	*tmp;
+	t_dnode	*cursor;
 
 	if (ft_lstsize(*stack_a) == 1 || !stack_a || !*stack_a)
 		return ;
@@ -28,16 +28,17 @@ void	rra(dnode **stack_a)
 	tmp->prev = NULL;
 	cursor->next = NULL;
 	ft_lstadd_front(stack_a, tmp);
-	(*stack_a)->prev = tmp;
+	(*stack_a)->prev = NULL;
+	tmp->next->prev = *stack_a;
 	*stack_a = tmp;
 	tmp = NULL;
 	cursor = NULL;
 }
 
-void	rrb(dnode **stack_b)
+void	rrb(t_dnode **stack_b)
 {
-	dnode	*tmp;
-	dnode	*cursor;
+	t_dnode	*tmp;
+	t_dnode	*cursor;
 
 	if (ft_lstsize(*stack_b) == 1 || !stack_b || !*stack_b)
 		return ;
@@ -50,13 +51,14 @@ void	rrb(dnode **stack_b)
 	tmp->prev = NULL;
 	cursor->next = NULL;
 	ft_lstadd_front(stack_b, tmp);
-	(*stack_b)->prev = tmp;
+	(*stack_b)->prev = NULL;
+	tmp->next->prev = *stack_b;
 	*stack_b = tmp;
 	tmp = NULL;
 	cursor = NULL;
 }
 
-void	rrr(dnode **stack_a, dnode **stack_b)
+void	rrr(t_dnode **stack_a, t_dnode **stack_b)
 {
 	rra(stack_a);
 	rrb(stack_b);
