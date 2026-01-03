@@ -61,10 +61,10 @@ For this project i needed different ressources for different notions
 
 ## AI
 
-For this project i used AI for :
+For this project i used AI to :
 
-understanding how to implement a stack
+understand how to implement a stack
 
-learning to make a makefile that uses another makefile
+learn to make a makefile that uses another makefile
 
 debug some things at the end of the project cause it became too hard to debug locally
